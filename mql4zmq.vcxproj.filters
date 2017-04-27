@@ -28,6 +28,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\Debug\libzmq.lib" />
+    <Library Include="libzmq.lib" />
   </ItemGroup>
 </Project>

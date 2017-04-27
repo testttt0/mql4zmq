@@ -34,3 +34,5 @@ mql4zmq_device
 mql4s_recv
 mql4s_send
 mql4s_sendmore
+
+release_buffer

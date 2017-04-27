@@ -29,7 +29,8 @@
 */
 
 // Include the original libzmq header file.
-#include "../../../include/zmq.h"
+#include "zmq.h"
+//#pragma comment(lib, "libzmq.lib")
 
 // Handle DSO symbol visibility. This is already defined in zmq.h, but we set it here again to protect against future changes to Microsoft Visual C++ detection methods.
 #define ZMQ_EXPORT __declspec(dllexport)
@@ -82,7 +83,7 @@ ZMQ_EXPORT int WINAPI mql4zmq_msg_init_size (zmq_msg_t *msg, size_t size)
 // 
 // NOTICE: We are no longer using this (passing NULL instead) as it was causing windows to close MetaTrader due to 
 //		   thinking it was a virus since we were clearing memory that was originally allocated MetaTrader and not mql4zmq.dll 
-void release_buffer(void *data, void *hint) 
+ZMQ_EXPORT void release_buffer(void *data, void *hint)
 { 
 	free(data);
 }
